@@ -14,6 +14,6 @@ COPY . /usr/app
 
 # write the profile.yml file from env var
 RUN mkdir -p /root/.dbt
-COPY ./scripts/write_profiles.sh /write_profiles.sh
+COPY ./write_profiles.sh /write_profiles.sh
 RUN chmod +x /write_profiles.sh
 ENTRYPOINT ["/bin/bash", "-c", "/write_profiles.sh && dbt run"]
