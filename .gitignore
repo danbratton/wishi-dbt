@@ -1,0 +1,17 @@
+logs/dbt.log
+.user.yml
+
+target/
+dbt_packages/
+logs/
+.user.yml
+logs/
+manifest.json
+run_results.json
+sources.json
+catalog.json
+.DS_Store
+.idea/
+.vscode/
+
+wishi/profiles.yml

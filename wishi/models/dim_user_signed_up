@@ -1,0 +1,6 @@
+select
+	row_number() over (order by id),
+	id as event_id,
+	event_details->>'sign_up_method' as sign_up_method
+from {{ source('public', 'wishlist_rawevents') }}
+where event_name = 'USER_SIGNED_UP'

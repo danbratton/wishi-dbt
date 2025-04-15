@@ -1,0 +1,3 @@
+event_name,event_description
+USER_SIGNED_UP,A user signed up with a new account
+USER_SIGNED_IN,A user signed in with an existing account
