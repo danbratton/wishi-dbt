@@ -11,3 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 WORKDIR /usr/app/wishi
 
 COPY . /usr/app
+
+# write the profile.yml file from env var
+RUN mkdir -p /root/.dbt
+COPY ./scripts/write_profiles.sh /write_profiles.sh
+RUN chmod +x /write_profiles.sh
+ENTRYPOINT ["/write_profiles.sh", "&&", "dbt", "run"]
