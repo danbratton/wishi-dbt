@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /usr/app/wishi
+WORKDIR /usr/app
 
 COPY . /usr/app
 
@@ -16,4 +16,4 @@ COPY . /usr/app
 RUN mkdir -p /root/.dbt
 COPY ./scripts/write_profiles.sh /write_profiles.sh
 RUN chmod +x /write_profiles.sh
-ENTRYPOINT ["/write_profiles.sh", "&&", "dbt", "run"]
+ENTRYPOINT ["/bin/bash", "-c", "/write_profiles.sh && dbt run"]
