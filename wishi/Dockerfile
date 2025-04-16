@@ -16,4 +16,4 @@ COPY . /usr/app
 RUN mkdir -p /root/.dbt
 COPY /write_profile.sh /write_profile.sh
 RUN chmod +x /write_profile.sh
-ENTRYPOINT ["/bin/bash", "-c", "/write_profile.sh && dbt run"]
+ENTRYPOINT ["/bin/bash", "-c", "/write_profile.sh && dbt build"]
