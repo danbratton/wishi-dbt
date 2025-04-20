@@ -1,7 +1,7 @@
 # Purpose
 This repository holds the dbt installation for Wishi, a wishlist app I built and maintain at getwishi.com. The purpose of open sourcing this repo is to share how I implemented the data model with dbt.
 
-A walkthrough of the data model is at [WALKTHROUGH.md]().
+A walkthrough of the data model is at [WALKTHROUGH.md](https://github.com/danbratton/wishi-dbt/blob/main/wishi/WALKTHROUGH.md).
 
 # Production
 The `dbt/Dockerfile` is used in production
