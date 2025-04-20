@@ -1,5 +1,5 @@
 # this dockerfile is used in production in the dedicated digital ocean worker
-FROM python:3.13
+FROM python:3.13-alpine
 
 # This ensures logs are sent to console immediately instead of batching.
 # Impacts performance slightly so should remove this ENV variable at scale.
