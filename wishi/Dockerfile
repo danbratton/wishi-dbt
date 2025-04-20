@@ -17,5 +17,4 @@ RUN mkdir -p /root/.dbt
 COPY /write_profile.sh /write_profile.sh
 RUN chmod +x /write_profile.sh
 
-# for debugging removing dbt build for now
 ENTRYPOINT ["/bin/bash", "-c", "/write_profile.sh && dbt build"]

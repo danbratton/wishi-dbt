@@ -23,3 +23,15 @@ seeds:
   wishi:
     event_descriptions:
       file: event_descriptions.csv
+    dim_dates:
+      file: dim_dates.csv
+      +column_types:
+        id: varchar(8)
+        calendar_week_start_date_id: varchar(8)
+        calendar_week_end_date_id: varchar(8)
+        calendar_month_start_date_id: varchar(8)
+        calendar_month_end_date_id: varchar(8)
+        calendar_quarter_start_date_id: varchar(8)
+        calendar_quarter_end_date_id: varchar(8)
+        calendar_year_start_date_id: varchar(8)
+        calendar_year_end_date_id: varchar(8)
