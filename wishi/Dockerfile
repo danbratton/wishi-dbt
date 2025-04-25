@@ -5,6 +5,14 @@ FROM python:3.13-alpine
 # Impacts performance slightly so should remove this ENV variable at scale.
 ENV PYTHONUNBUFFERED=1
 
+# these aren't included in 3.13-alpine
+RUN apk update && \
+    apk add --no-cache \
+      gcc \
+      musl-dev \
+      postgresql-dev \
+      linux-headers
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
