@@ -8,6 +8,7 @@ ENV PYTHONUNBUFFERED=1
 # these aren't included in 3.13-alpine
 RUN apk update && \
     apk add --no-cache \
+      bash \
       gcc \
       musl-dev \
       postgresql-dev \
