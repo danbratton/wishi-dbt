@@ -1,5 +1,5 @@
 # this is used for local development only
-FROM python:3.13
+FROM python:3.13-alpine
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
