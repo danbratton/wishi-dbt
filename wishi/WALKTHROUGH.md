@@ -6,7 +6,7 @@
 * I visualized the data in [**Looker Studio**](https://lookerstudio.google.com/reporting/b5c35fcb-9d47-48e8-af6f-e75dd61164da).
 
 # Goals
-I want to be able to key metrics for my web app: (wishi)[www.getwishi.com]:
+I want to be able to key metrics for my web app, [wishi](www.getwishi.com):
 * Daily/Monthly active users
 * Activation rate
 * Monthly new account creations
