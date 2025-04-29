@@ -74,4 +74,6 @@ The fact is a single user action. Some of the actions tracked are:
 | date_key          | A foreign, natural key to the `dim_dates` table<br> `VARCHAR(8,0)`|20250425 |
 
 # Keeping the data fresh
-In order to keep the data models updated I created a [github action](https://github.com/danbratton/wishi-dbt/blob/main/.github/workflows/dbt-build-schedule.yml). This action triggers a deployment of the `wishi-dbt` repo to Digital Ocean. I've set up this deployment to run `dbt build` in the [Dockerfile](https://github.com/danbratton/wishi-dbt/blob/main/wishi/Dockerfile).
+In order to keep the data models updated I created a [github action](https://github.com/danbratton/wishi-dbt/blob/main/.github/workflows/dbt-build-schedule.yml). This action is a daily cron job that triggers a deployment of the `wishi-dbt` repo to Digital Ocean. The deployment will run `dbt build` in the (Dockerfile)[https://github.com/danbratton/wishi-dbt/blob/main/wishi/Dockerfile].
+
+Currently, this action runs every day at 2am.
