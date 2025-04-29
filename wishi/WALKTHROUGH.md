@@ -72,3 +72,6 @@ The fact is a single user action. Some of the actions tracked are:
 | list_item_key     | Foreign key to the `dim_items` table <br> `NUMBER(10,0)`<br>Nullable | 766 |
 | event_timestamp   | The timezoned timestamp of the event<br>`DATETIME`<br>NOT Nullable  | 2025-04-25 13:03:47.752 -0400|
 | date_key          | A foreign, natural key to the `dim_dates` table<br> `VARCHAR(8,0)`|20250425 |
+
+# Keeping the data fresh
+In order to keep the data models updated I created a [github action](https://github.com/danbratton/wishi-dbt/blob/main/.github/workflows/dbt-build-schedule.yml). This action triggers a deployment of the `wishi-dbt` repo to Digital Ocean. I've set up this deployment to run `dbt build` in the (Dockerfile)[https://github.com/danbratton/wishi-dbt/blob/main/wishi/Dockerfile].
