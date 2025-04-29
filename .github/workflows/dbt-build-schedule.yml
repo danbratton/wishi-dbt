@@ -1,0 +1,23 @@
+name: "Rebuild dbt"
+
+on:
+  schedule:
+    # every day at 2am
+    - cron: '0 2 * * *'
+  # allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  trigger-do-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # install doctl and authenticate
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_API_TOKEN }}
+
+      # trigger deployment of the wishi app
+      - name: Trigger App Platform deployment
+        run: |
+          doctl apps create-deployment ${{ secrets.DO_APP_ID }}

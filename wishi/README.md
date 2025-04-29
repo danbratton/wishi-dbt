@@ -12,5 +12,9 @@ The `dbt/Dockerfile` is used in production
 3. Pull this repo into `wishi/dbt`
 4. Review the `README.md` for the wishi repo as the rest of the steps are there
 
+## Generating docs
+`dbt docs generate`
+`dbt docs serve --host 0.0.0.0 --port 8080`
+
 # Production
 The `dbt/Dockerfile` is used in production to run a daily job. 
