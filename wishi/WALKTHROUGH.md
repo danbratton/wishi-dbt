@@ -6,31 +6,31 @@
 * I visualized the data in [**Looker Studio**](https://lookerstudio.google.com/reporting/b5c35fcb-9d47-48e8-af6f-e75dd61164da).
 
 # Goals
-I want to be able to key metrics for my web app, [wishi](www.getwishi.com):
+I want to be able to monitor key metrics for my web app, [wishi](https://www.getwishi.com), such as:
 * Daily/Monthly active users
-* Activation rate
 * Monthly new account creations
+* Use activation rate 
 
 I also want to monitor product metrics such as:
 * The average number of lists users have
 * The average number of items on a list
-* What portion of list items are URLs vs. free text
+* What portion of list items are URLs
 * How many lists are viewed by anonymous users (because it was shared)
 
-To do this, I need to develop a data pipeline to transform raw event data and product data from [wishi](www.getwishi.com) into analytics-ready data that can be visualized in a dashboard.
+To do this, I needed to develop a data pipeline to transform raw event data and product data from [wishi](https://www.getwishi.com) into analytics-ready data that can be visualized in a dashboard.
 
 # Developing the data model
-I followed Kimball's dimensional modeling techniques when deciding how to model the data from [wishi](www.getwishi.com).
+I followed Kimball's dimensional modeling techniques when deciding how to model the data from [wishi](https://www.getwishi.com).
 
 ### **Step 1**: The business process
 
-The key business process for [wishi](www.getwishi.com) is when a user uses the web app to create a new account, create a list, add items to a list, share a list, etc. I call this an **event** or **user action**.
+The key business process for [wishi](https://www.getwishi.com) is when a user uses the web app to create a new account, create a list, add items to a list, share a list, etc. I call this an **event** or **user action**.
 
 ### **Step 2**: The grain
 
 The grain is a single user action in the web app. This is the *atomic* grain, which will set my data model up to handle pretty much any future analytic questions. 
 
-An example alternative would be to declare the grain as a day's user activity. This would mean all activity for a day would be pre-aggregated into columns such as total new accounts created for the day and total user actions for the day. However, this would limit the downstream analysis that could be performed. For instnace, I wouldn't be able to know which user performed which actions.
+An example alternative would be to declare the grain as a day's user activity. This would mean all activity for a day would be pre-aggregated into columns such as total new accounts created for the day and total user actions for the day. However, this would limit the downstream analysis that could be performed. For instance, I wouldn't be able to know which user performed which actions. This would prevent me from slicing across user types, for example, which is important for comparing groups of users (such as power users vs. casual users) or cohort analysis.
 
 The atomic grain I have selected gives analysts the flexibility to calculate daily aggregations (like the above) and also any other analysis on user activity.
 
