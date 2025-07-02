@@ -1,5 +1,5 @@
 # Summary
-* I developed a data model following dimensional modeling techiques (also known as a star schema) for app activity data from [wishi]([www.getwishi.com](https://www.getwishi.com)), a wish list web application.
+* I developed a data model following dimensional modeling techiques (also known as a star schema) for app activity data from [wishi](https://www.getwishi.com), a wish list web application.
 * I used **dbt** to build the cental [`fact_events`](https://danbratton.github.io/wishi-dbt/#!/model/model.wishi.fact_events). table where each row represents a single user-generated event that took place in [wishi](https://www.getwishi.com).
 * I also used **dbt** to build several dimensional tables that can be joined with `fact_events` to get more information about users, lists, items on a list, or the events themselves.
 * The dbt auto-generated docs [here](https://danbratton.github.io/wishi-dbt) have details about the models I developed.
