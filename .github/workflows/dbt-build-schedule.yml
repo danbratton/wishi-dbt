@@ -1,5 +1,6 @@
 name: "Rebuild dbt"
 
+# dummy comment to reset the github action clock (actions will stop running after 60 days)
 on:
   schedule:
     # every day at 2am
